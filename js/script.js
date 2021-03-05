@@ -14,16 +14,16 @@
 // 	console.log(response);
 // });
 
-const $address = $('.address')
+const $address = $('.address');
 const $beds = $('.beds');
 const $bath = $('.bath');
 const $sqft = $('.sqft');
 const $price =$('.price');
 const $realtor = $('.realtor');
 const $pics = $('.pics');
-const $cityInput = $('.city')
-const $stateInput = $('.state');
-// const $input = $('input[type="text"]');
+const $cityInput = $('#city')
+const $stateInput = $('#state');
+
 
 
 
@@ -50,6 +50,38 @@ function handleGetData(event) {
     );    
 }
 
+
+
+// function execute(response) {
+//     for(let i = 0; i < response.length; i++) {
+//     $address.text(rentalData.data.results[i].location.address.line + " " + rentalData.data.results[i].location.address.city + ", " + rentalData.data.results[i].location.address.postal_code);
+//     $beds.text(entalData.data.results[i].description.beds_max);
+//     $bath.text(rentalData.data.results[i].description.baths_max);
+//     $sqft.text(rentalData.data.results[i].description.sqft_max);
+//     $price.text(rentalData.data.results[i].list_price_max);
+//     $realtor.text(rentalData.data.results[i].href);
+//     // if (i > 5) break;
+//     };
+// }
+
+// function execute() {
+//     $address.text(rentalData.data.results[0].location.address.line + " " + rentalData.data.results[0].location.address.city + ", " + rentalData.data.results[0].location.address.postal_code );
+//     $beds.text(rentalData.data.results[0].description.beds_max);
+//     $bath.text(rentalData.data.results[0].description.baths_max);
+//     $sqft.text(rentalData.data.results[0].description.sqft_max);
+//     $price.text(rentalData.data.results[0].list_price_max);
+//     $realtor.text(rentalData.data.results[0].href);
+//  }
+
+
+
+
+
+
+
+
+
+
 function execute() {
     $address.text(rentalData.data.results[0].location.address.line + " " + rentalData.data.results[0].location.address.city + ", " + rentalData.data.results[0].location.address.postal_code );
     $beds.text(rentalData.data.results[0].description.beds_max);
@@ -57,7 +89,6 @@ function execute() {
     $sqft.text(rentalData.data.results[0].description.sqft_max);
     $price.text(rentalData.data.results[0].list_price_max);
     $realtor.text(rentalData.data.results[0].href);
-    // $pics.setAttribute("src", rentalData.data.results[0].photos[0].href);
  }
 
 
