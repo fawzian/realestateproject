@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: pink;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: yellow;
+    margin: auto;
+    padding-;
+}
+
+.block {  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 40%;
+    height: 400px;
+    margin: auto;
+}
+
+#one {
+    background-color: orange;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#two {
+    background-color: purple;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#three {
+    background-color: green;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}
+
+#four {
+    background-color: turquoise;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#five {
+    background-color: blue;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}
+
+#six {
+    background-color: tan;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+p {
+    display: block;
+    padding-left: 1.5%;
+}

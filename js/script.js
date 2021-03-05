@@ -14,15 +14,15 @@
 // 	console.log(response);
 // });
 
-const $address = $('#address')
-const $beds = $('#beds');
-const $bath = $('#bath');
-const $sqft = $('#sqft');
-const $price =$('#price');
-const $realtor = $('#realtor');
-// const $pics = $('#pics');
-const $cityInput = $('#city')
-const $stateInput = $('#state');
+const $address = $('.address')
+const $beds = $('.beds');
+const $bath = $('.bath');
+const $sqft = $('.sqft');
+const $price =$('.price');
+const $realtor = $('.realtor');
+const $pics = $('.pics');
+const $cityInput = $('.city')
+const $stateInput = $('.state');
 // const $input = $('input[type="text"]');
 
 
@@ -57,10 +57,8 @@ function execute() {
     $sqft.text(rentalData.data.results[0].description.sqft_max);
     $price.text(rentalData.data.results[0].list_price_max);
     $realtor.text(rentalData.data.results[0].href);
-    // $pics.text(rentalData.data.results[0].photos);
+    // $pics.setAttribute("src", rentalData.data.results[0].photos[0].href);
  }
-
-
 
 
 
