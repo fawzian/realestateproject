@@ -26,7 +26,7 @@ function handleGetData(event) {
       }).then(
         (data) => {
          rentalData = data;
-         execute();
+         execute(rentalData.data.results);
         },
         (error) => {
          console.log('bad request', error);
@@ -37,26 +37,15 @@ function handleGetData(event) {
 
 
 function execute(recieved) {
-    for(let i = 0; i < 42; i++) {
-    $address.text(rentalData.data.results[i].location.address.line + " " + rentalData.data.results[i].location.address.city + ", " + rentalData.data.results[i].location.address.postal_code);
-    $beds.text(rentalData.data.results[i].description.beds_max);
-    $bath.text(rentalData.data.results[i].description.baths_max);
-    $sqft.text(rentalData.data.results[i].description.sqft_max);
-    $price.text(rentalData.data.results[i].list_price_max);
-    $realtor.text(rentalData.data.results[i].href);
+    for(let i = 0; i < recieved.length; i++) {
+    $address.text(recieved[i].location.address.line + " " + recieved[i].location.address.city + ", " + recieved[i].location.address.postal_code);
+    $beds.text(recieved[i].description.beds_max);
+    $bath.text(recieved[i].description.baths_max);
+    $sqft.text(recieved[i].description.sqft_max);
+    $price.text(recieved[i].list_price_max);
+    $realtor.text(recieved[i].href);
     };
 }
-
-// function execute() {
-//     $address.text(rentalData.data.results[0].location.address.line + " " + rentalData.data.results[0].location.address.city + ", " + rentalData.data.results[0].location.address.postal_code );
-//     $beds.text(rentalData.data.results[0].description.beds_max);
-//     $bath.text(rentalData.data.results[0].description.baths_max);
-//     $sqft.text(rentalData.data.results[0].description.sqft_max);
-//     $price.text(rentalData.data.results[0].list_price_max);
-//     $realtor.text(rentalData.data.results[0].href);
-//  }
-
-
 
 
 
@@ -100,7 +89,7 @@ function execute(recieved) {
 
 
 
-// function render(response) {
+// function execute(response) {
 //     for(let i = 0; i < response.length; i++){
 //         console.log(response[i].list_price_min)
 //     };
