@@ -4,7 +4,6 @@ const $bath = $('.bath');
 const $sqft = $('.sqft');
 const $price =$('.price');
 const $realtor = $('.realtor');
-const $pics = $('.pics');
 const $cityInput = $('#city');
 const $stateInput = $('#state');
 
@@ -43,7 +42,7 @@ function execute(recieved) {
     $bath.text(recieved[i].description.baths_max);
     $sqft.text(recieved[i].description.sqft_max);
     $price.text(recieved[i].list_price_max);
-    $realtor.text(recieved[i].href);
+    $realtor.attr("href", recieved[i].href);
     };
 }
 

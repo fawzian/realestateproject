@@ -29,3 +29,4 @@
 
 - Limit the page to show only 6 rental properties per page
 - add a more modern an exciting CSS and page layout
+- add images of the property
