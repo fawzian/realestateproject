@@ -1,6 +1,6 @@
 #The Rental App
 
-##Technologies Used
+## Technologies Used
 
 - HTML
 - CSS
@@ -9,23 +9,23 @@
 
 
 
-##Approach Taken
+## Approach Taken
 
 - Connected API
 - Created space in HTML for the data to transfer
 - 
 
 
-##a link to your live site 
+##  Link to Site 
 
 -
 
-##installation instructions
+## Installation Instructions
 
 -
 -
 
-##unsolved problems
+## Unsolved Problems
 
 - Limit the page to show only 6 rental properties per page
 - add a more modern an exciting CSS and page layout

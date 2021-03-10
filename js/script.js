@@ -18,14 +18,15 @@ $('form').on('submit', handleGetData);
 
 function handleGetData(event) {
     event.preventDefault();
-   userCityInput = $cityInput.val();
-   userStateInput = $stateInput.val();
+    userCityInput = $cityInput.val();
+    userStateInput = $stateInput.val();
     $.ajax({
         url: `https://realtor-com-real-estate.p.rapidapi.com/for-rent?city=${userCityInput}&state_code=${userStateInput}&limit=42&offset=0&rapidapi-key=94e3687fe5msh3d0f0a5d355c045p12da55jsne0d4f52c3faf`
       }).then(
         (data) => {
-         rentalData = data;
-         execute(rentalData.data.results);
+        console.log(data.data);
+        rentalData = data.data.results;
+        execute();
         },
         (error) => {
          console.log('bad request', error);
@@ -35,16 +36,24 @@ function handleGetData(event) {
 
 
 
-function execute(recieved) {
-    for(let i = 0; i < recieved.length; i++) {
-    $address.text(recieved[i].location.address.line + " " + recieved[i].location.address.city + ", " + recieved[i].location.address.postal_code);
-    $beds.text(recieved[i].description.beds_max);
-    $bath.text(recieved[i].description.baths_max);
-    $sqft.text(recieved[i].description.sqft_max);
-    $price.text(recieved[i].list_price_max);
-    $realtor.attr("href", recieved[i].href);
+
+function execute() {
+    console.log("running execute")
+    for(let i = 0; i < rentalData.length; i++) {  
+        console.log(rentalData[i]) 
+        $address.eq(i).text(rentalData[i].location.address.line + " " + rentalData[i].location.address.city + ", " + rentalData[i].location.address.postal_code);
+        $beds.eq(i).text(rentalData[i].description.beds_max);
+        $bath.eq(i).text(rentalData[i].description.baths_max);
+        $sqft.eq(i).text(rentalData[i].description.sqft_max);
+        $price.eq(i).text(rentalData[i].list_price_max);
+        $realtor.eq(i).attr("href", rentalData[i].href);
+        console.log(rentalData);
     };
 }
+
+
+// $('.address').html(response[i].location.address.line);
+
 
 
 
@@ -80,7 +89,7 @@ function execute(recieved) {
 // );
 
 
-// function render(response) {
+// function render1(response) {
 //     for(let i = 0; i < response.length; i++){
 //         console.log(response[i])
 //     };
@@ -88,7 +97,7 @@ function execute(recieved) {
 
 
 
-// function execute(response) {
+// function executetest(response) {
 //     for(let i = 0; i < response.length; i++){
 //         console.log(response[i].list_price_min)
 //     };
